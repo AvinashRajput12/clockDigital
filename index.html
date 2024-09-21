@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.container{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(147, 211, 190);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 7%;
+   animation: Avi 2s linear ;
+   transition: transform 0.4s ; 
+   position: relative;
+}
+.container::before{
+    content: '';
+    background-image: url(https://img.freepik.com/free-photo/3d-representation-hindu-deity-krishna_23-2151200099.jpg);
+    background-size: cover;
+    background-position: center;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.4;
+    position: absolute;
+}
+
+.container:hover{
+    transform: scale(1.2);
+}
+
+h1{
+    font-size: 50px;
+    color: rgb(16, 2, 2);
+    background-color: transparent;
+    z-index: 33;
+}
+
+
+@keyframes Avi{
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+    </style>
+</head>
+<body>
+   <div class="container">
+    <h1></h1>
+   </div>
+   
+
+<script>
+    let date = new Date()
+
+setInterval(mytime,1000)
+function mytime(){
+    let date = new Date()
+    let time = date.toLocaleTimeString() 
+console.log(time);
+
+let h1 = document.querySelector('h1')
+h1.innerHTML=time
+}
+</script>
+    </script>
+</body>
+</html>
